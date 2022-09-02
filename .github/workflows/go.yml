@@ -17,6 +17,11 @@ jobs:
       uses: actions/setup-go@v3
       with:
         go-version: 1.18
+        HOST_DB: ${{ secrets.HOST_DB }}
+        USER_DB: ${{ secrets.USER_DB }}
+        PASSWORD_DB: ${{ secrets.PASSWORD_DB }}
+        NAME_DB: ${{ secrets.NAME_DB }}
+        PORT_DB: ${{ secrets.PORT_DB }}
 
     - name: Build
       run: go build -v ./...
