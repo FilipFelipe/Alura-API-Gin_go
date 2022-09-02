@@ -19,19 +19,19 @@ jobs:
         go-version: 1.18
 
     - name: Build
+      run: go build -v ./...
       with:
         HOST_DB: ${{ secrets.HOST_DB }}
         USER_DB: ${{ secrets.USER_DB }}
         PASSWORD_DB: ${{ secrets.PASSWORD_DB }}
         NAME_DB: ${{ secrets.NAME_DB }}
         PORT_DB: ${{ secrets.PORT_DB }}
-      run: go build -v ./...
 
     - name: Test
+      run: go test -v ./...
       with:
         HOST_DB: ${{ secrets.HOST_DB_TEST }}
         USER_DB: ${{ secrets.USER_DB_TEST }}
         PASSWORD_DB: ${{ secrets.PASSWORD_DB_TEST }}
         NAME_DB: ${{ secrets.NAME_DB_TEST }}
         PORT_DB: ${{ secrets.PORT_DB_TEST }}
-      run: go test -v ./...
